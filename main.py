@@ -138,7 +138,7 @@ def generate_html(products, total_raw=0):
         html = f.read()
 
     today = datetime.now()
-    date_str = today.strftime('%Y年%m月%d日')
+    date_str = today.strftime('%B %d, %Y')
     date_iso = today.strftime('%Y-%m-%d')
 
     # === 1. 替换 <title> ===
