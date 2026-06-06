@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Backups
+index_backup_*.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual env
+venv/
+env/
+.venv/
+
+# Data (keep CSV files, but ignore temp)
+data/*.tmp
+*.tmp
+
+# gh CLI
+gh_cli/

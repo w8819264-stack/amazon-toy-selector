@@ -1,0 +1,43 @@
+{
+  "project_name": "亚马逊玩具自动选品系统",
+  "version": "1.0.0",
+  "filters": {
+    "category": "Toys & Games",
+    "subcategories": [
+      "Building Toys",
+      "Action Figures",
+      "Board Games",
+      "STEM Toys",
+      "Dolls & Accessories",
+      "Outdoor Play",
+      "Educational Toys",
+      "Remote Control Toys"
+    ],
+    "price_min": 15.99,
+    "price_max": 49.99,
+    "min_rating": 4.0,
+    "min_reviews": 100,
+    "min_sales_est": 300,
+    "max_competitors": 50,
+    "min_profit_margin": 0.25,
+    "weight_max_lbs": 3.0,
+    "dimensions_max": {
+      "length_in": 18,
+      "width_in": 14,
+      "height_in": 6
+    }
+  },
+  "fba_fees": {
+    "pick_pack_per_unit": 2.50,
+    "weight_handling_per_lb": 0.38,
+    "referral_fee_percent": 0.15,
+    "monthly_storage_per_cuft": 0.75
+  },
+  "scoring_weights": {
+    "profit_margin": 0.35,
+    "sales_velocity": 0.25,
+    "review_count": 0.15,
+    "rating": 0.15,
+    "competition_index": 0.10
+  }
+}
