@@ -10,6 +10,8 @@ on:
 # 需要写入权限来推送变更
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update-report:
@@ -19,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -36,12 +40,16 @@ jobs:
         run: |
           git config user.name "Amazon Bot"
           git config user.email "bot@amazon-toy-selector.local"
+          # 使用 GITHUB_TOKEN 认证
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add index.html data/
           # 如果有变更才提交
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "📊 Daily report update: $(date +'%Y-%m-%d')"
-            git push
+            git push origin HEAD
             echo "✅ Changes pushed!"
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
